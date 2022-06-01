@@ -5,4 +5,15 @@
     <RootNamespace>Techno_store_back.DataAccessLayer</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Data\" />
+    <Folder Include="Interfaces\Repositories\" />
+    <Folder Include="Interfaces\Entities\" />
+    <Folder Include="Mapping\" />
+    <Folder Include="Models\DTOs\" />
+    <Folder Include="Models\Enums\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
