@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Techno_store_back.DataAccessLayer.Entities;
+using Techno_store_back.DAL.Entities;
 
-namespace Techno_store_back.DataAccessLayer.Data
+namespace Techno_store_back.DAL.Data
 {
     public class AppDbContext : DbContext
     {

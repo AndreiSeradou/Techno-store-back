@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Techno-store-back.BusinessLayer\Techno-store-back.BusinessLayer.csproj" />
-    <ProjectReference Include="..\Techno-store-back.DataAccessLayer\Techno-store-back.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Techno-store-back.BusinessLayer\Techno-store-back.BL.csproj" />
+    <ProjectReference Include="..\Techno-store-back.DataAccessLayer\Techno-store-back.DAL.csproj" />
     <ProjectReference Include="..\Techno-store-back.GeneralConfiguration\Techno-store-back.Configuration.csproj" />
   </ItemGroup>
 

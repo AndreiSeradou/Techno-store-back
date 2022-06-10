@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Techno_store_back.DataAccessLayer.Data;
+using Techno_store_back.DAL.Data;
 
 namespace Techno_store_back.Web.Migrations
 {

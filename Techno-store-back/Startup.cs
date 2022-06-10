@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Techno_store_back.Configuration;
-using Techno_store_back.DataAccessLayer.Configuration;
+using Techno_store_back.DAL.Configuration;
 
 namespace Techno_store_back
 {

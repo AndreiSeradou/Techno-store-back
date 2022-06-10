@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Techno_store_back.BL</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Techno-store-back.DataAccessLayer\Techno-store-back.DAL.csproj" />
+    <ProjectReference Include="..\Techno-store-back.GeneralConfiguration\Techno-store-back.Configuration.csproj" />
+  </ItemGroup>
+
+</Project>

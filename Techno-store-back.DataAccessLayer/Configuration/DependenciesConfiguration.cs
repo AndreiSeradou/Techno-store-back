@@ -1,9 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Techno_store_back.DataAccessLayer.Data;
-using Techno_store_back.DataAccessLayer.Mapping;
+using Techno_store_back.DAL.Data;
+using Techno_store_back.DAL.Interfaces.Repositories;
+using Techno_store_back.DAL.Mapping;
+using Techno_store_back.DAL.Repositories;
 
-namespace Techno_store_back.DataAccessLayer.Configuration
+namespace Techno_store_back.DAL.Configuration
 {
     public static class DependenciesConfiguration
     {
@@ -20,6 +22,13 @@ namespace Techno_store_back.DataAccessLayer.Configuration
             serviceCollection.AddAutoMapper(
                 c => c.AddProfile<MappingDALConfiguration>(),
                 typeof(MappingDALConfiguration));
+
+            return serviceCollection;
+        }
+
+        public static IServiceCollection RegisterRepositories(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<ILaptopRepository, LaptopRepository>();
 
             return serviceCollection;
         }

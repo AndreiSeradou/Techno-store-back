@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Techno_store_back.DataAccessLayer.Entities;
-using Techno_store_back.DataAccessLayer.Models.DTOs;
+using Techno_store_back.DAL.Entities;
+using Techno_store_back.DAL.Models.DTOs;
 
-namespace Techno_store_back.DataAccessLayer.Mapping
+namespace Techno_store_back.DAL.Mapping
 {
     public class MappingDALConfiguration : Profile
     {

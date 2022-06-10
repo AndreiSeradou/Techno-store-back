@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Techno_store_back.DataAccessLayer.Models.DTOs;
+using Techno_store_back.DAL.Models.DTOs;
 
-namespace Techno_store_back.DataAccessLayer.Interfaces.Repositories
+namespace Techno_store_back.DAL.Interfaces.Repositories
 {
     public interface ILaptopRepository
     {

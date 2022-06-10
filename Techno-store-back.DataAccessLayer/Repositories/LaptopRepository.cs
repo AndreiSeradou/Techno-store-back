@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Techno_store_back.DataAccessLayer.Data;
-using Techno_store_back.DataAccessLayer.Entities;
-using Techno_store_back.DataAccessLayer.Interfaces.Repositories;
-using Techno_store_back.DataAccessLayer.Models.DTOs;
+using Techno_store_back.DAL.Data;
+using Techno_store_back.DAL.Entities;
+using Techno_store_back.DAL.Interfaces.Repositories;
+using Techno_store_back.DAL.Models.DTOs;
 
-namespace Techno_store_back.DataAccessLayer.Repositories
+namespace Techno_store_back.DAL.Repositories
 {
     public class LaptopRepository : ILaptopRepository
     {

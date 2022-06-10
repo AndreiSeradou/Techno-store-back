@@ -1,6 +1,6 @@
-﻿namespace Techno_store_back.DAL.Models.DTOs
+﻿namespace Techno_store_back.BL.Models.DTOs
 {
-    public class LaptopDAL
+    public class LaptopBL
     {
         public int Id { get; set; }
         public string Model { get; set; }
