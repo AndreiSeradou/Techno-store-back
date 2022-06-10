@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Techno_store_back.Configuration;
+using Techno_store_back.DataAccessLayer.Configuration;
 
 namespace Techno_store_back
 {
@@ -24,7 +26,8 @@ namespace Techno_store_back
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.RegisterDbContext(Configuration.GetConnectionString(GeneralConfiguration.DbConnection));
+            services.RegisterDALMappingConfig();
             services.AddControllers();
         }
 

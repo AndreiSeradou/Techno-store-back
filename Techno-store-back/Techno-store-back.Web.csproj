@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Techno_store_back.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Techno-store-back.BusinessLayer\Techno-store-back.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Techno-store-back.DataAccessLayer\Techno-store-back.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Techno-store-back.GeneralConfiguration\Techno-store-back.Configuration.csproj" />
+  </ItemGroup>
+
+</Project>

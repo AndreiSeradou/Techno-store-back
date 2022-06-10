@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techno-store-back", "Techno-store-back\Techno-store-back.csproj", "{AD6579B7-1BF7-4EA9-BF09-B81AD0C49E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Techno-store-back.Web", "Techno-store-back\Techno-store-back.Web.csproj", "{AD6579B7-1BF7-4EA9-BF09-B81AD0C49E87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techno-store-back.DataAccessLayer", "Techno-store-back.DataAccessLayer\Techno-store-back.DataAccessLayer.csproj", "{3CE05544-76BC-425B-8B07-6BFA457C25B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Techno-store-back.DataAccessLayer", "Techno-store-back.DataAccessLayer\Techno-store-back.DataAccessLayer.csproj", "{3CE05544-76BC-425B-8B07-6BFA457C25B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techno-store-back.BusinessLayer", "Techno-store-back.BusinessLayer\Techno-store-back.BusinessLayer.csproj", "{E65E4729-8CBB-419A-BF24-121337D52BF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Techno-store-back.BusinessLayer", "Techno-store-back.BusinessLayer\Techno-store-back.BusinessLayer.csproj", "{E65E4729-8CBB-419A-BF24-121337D52BF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Techno-store-back.GeneralConfiguration", "Techno-store-back.GeneralConfiguration\Techno-store-back.GeneralConfiguration.csproj", "{A47FE91E-25DB-4663-B341-E855E36DB5F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Techno-store-back.Configuration", "Techno-store-back.GeneralConfiguration\Techno-store-back.Configuration.csproj", "{A47FE91E-25DB-4663-B341-E855E36DB5F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
