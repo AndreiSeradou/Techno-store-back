@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using Techno_store_back.BL.Configuration;
 using Techno_store_back.Configuration;
 using Techno_store_back.DAL.Configuration;
 
@@ -22,7 +24,15 @@ namespace Techno_store_back
         {
             services.RegisterDbContext(Configuration.GetConnectionString(GeneralConfiguration.DbConnection));
             services.RegisterDALMappingConfig();
+            services.RegisterBLMappingConfig();
+            services.RegisterRepositories();
+            services.RegisterServices();
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Techno_store_back", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,7 +41,11 @@ namespace Techno_store_back
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Techno_store_back v1"));
             }
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
