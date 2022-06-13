@@ -62,7 +62,7 @@ namespace Techno_store_back.DAL.Repositories
 
         public async Task<bool> UpdateAsync(LaptopDAL model)
         {
-            var laptopEntity = await _dbContext.Laptops.FirstOrDefaultAsync(o => o.Id == model.Id);
+            var laptopEntity = await _dbContext.Laptops.FirstOrDefaultAsync(l => l.Id == model.Id);
             _mapper.Map(model, laptopEntity);
 
             return laptopEntity != null;

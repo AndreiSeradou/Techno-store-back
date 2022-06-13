@@ -1,7 +1,11 @@
-﻿using System;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Techno_store_back.DAL.Data;
+using Techno_store_back.DAL.Entities;
 using Techno_store_back.DAL.Interfaces.Repositories;
 using Techno_store_back.DAL.Models.DTOs;
 
@@ -9,34 +13,61 @@ namespace Techno_store_back.DAL.Repositories
 {
     public class CatalogRepository : ICatalogRepository
     {
-        public Task<bool> CreateAsync(CatalogDAL model)
+        private readonly AppDbContext _dbContext;
+        private readonly IMapper _mapper;
+
+        public CatalogRepository(AppDbContext dbContext, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
+            _mapper = mapper;
         }
 
-        public Task<bool> DeleteAsync(int catalogId)
+        public async Task<bool> CreateAsync(CatalogDAL model)
         {
-            throw new NotImplementedException();
+            var catalogEntity = _mapper.Map<Catalog>(model);
+            var entityEntry = await _dbContext.Catalogs.AddAsync(catalogEntity);
+
+            return entityEntry.Entity != null;
         }
 
-        public Task<IReadOnlyCollection<CatalogDAL>> GetAllAsync()
+        public async Task<bool> DeleteAsync(int catalogId)
         {
-            throw new NotImplementedException();
+            var catalogEntity = await _dbContext.Catalogs.FirstOrDefaultAsync(c => c.Id == catalogId);
+
+            if (catalogEntity != null)
+            {
+                var entityEntry = _dbContext.Catalogs.Remove(catalogEntity);
+                return entityEntry.Entity != null;
+            }
+
+            return false;
         }
 
-        public Task<CatalogDAL> GetByIdAsync(int catalogId)
+        public async Task<IReadOnlyCollection<CatalogDAL>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            var catalogsEntities = await _dbContext.Catalogs.AsNoTracking().ToListAsync();
+
+            return _mapper.Map<IReadOnlyCollection<CatalogDAL>>(catalogsEntities);
         }
 
-        public Task SaveAsync()
+        public async Task<CatalogDAL> GetByIdAsync(int catalogId)
         {
-            throw new NotImplementedException();
+            var catalogEntity = await _dbContext.Catalogs.FirstOrDefaultAsync(c => c.Id == catalogId);
+
+            return _mapper.Map<CatalogDAL>(catalogEntity);
         }
 
-        public Task<bool> UpdateAsync(CatalogDAL model)
+        public async Task SaveAsync()
         {
-            throw new NotImplementedException();
+            _ = await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<bool> UpdateAsync(CatalogDAL model)
+        {
+            var catalogEntity = await _dbContext.Catalogs.FirstOrDefaultAsync(c => c.Id == model.Id);
+            _mapper.Map(model, catalogEntity);
+
+            return catalogEntity != null;
         }
     }
 }

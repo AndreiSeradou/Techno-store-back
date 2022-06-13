@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Techno_store_back.DAL.Entities
 {
-    internal class Order
+    public class Order
     {
         public int Id { get; set; }
         public bool Condition { get; set; }
