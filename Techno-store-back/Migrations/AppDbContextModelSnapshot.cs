@@ -18,7 +18,7 @@ namespace Techno_store_back.Web.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Techno_store_back.DataAccessLayer.Entities.Laptop", b =>
+            modelBuilder.Entity("Techno_store_back.DAL.Entities.Laptop", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

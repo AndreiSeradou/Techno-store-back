@@ -1,4 +1,6 @@
-﻿namespace Techno_store_back.DAL.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Techno_store_back.DAL.Entities
 {
     public class Laptop
     {
@@ -22,5 +24,8 @@
         public string Battery { get; set; }
         public string PowerSupplyUnit { get; set; }
         public string Weight { get; set; }
+        [ForeignKey("CatalogId")]
+        public Catalog Catalog { get; set; }
+        public int CatalogId { get; set; }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using Techno_store_back.BL.Configuration;
 using Techno_store_back.Configuration;
 using Techno_store_back.DAL.Configuration;
+using Techno_store_back.Web.Configuration;
 
 namespace Techno_store_back
 {
@@ -25,9 +26,15 @@ namespace Techno_store_back
             services.RegisterDbContext(Configuration.GetConnectionString(GeneralConfiguration.DbConnection));
             services.RegisterDALMappingConfig();
             services.RegisterBLMappingConfig();
+            services.RegisterPLMappingConfig();
             services.RegisterRepositories();
             services.RegisterServices();
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(GeneralConfiguration.Cors, builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
 
             services.AddSwaggerGen(c =>
             {
@@ -50,6 +57,8 @@ namespace Techno_store_back
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(GeneralConfiguration.Cors);
 
             app.UseEndpoints(endpoints =>
             {

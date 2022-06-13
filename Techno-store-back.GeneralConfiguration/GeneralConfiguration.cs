@@ -10,5 +10,6 @@ namespace Techno_store_back.Configuration
     {
         public const string DbConnection = "DefaultConnection";
         public const string InvalidModel = "Something went wrong";
+        public const string Cors = "Open";
     }
 }

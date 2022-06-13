@@ -9,8 +9,8 @@ using Techno_store_back.DAL.Data;
 namespace Techno_store_back.Web.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220610173107_addpropertyinlaptop")]
-    partial class addpropertyinlaptop
+    [Migration("20220611131832_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace Techno_store_back.Web.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Techno_store_back.DataAccessLayer.Entities.Laptop", b =>
+            modelBuilder.Entity("Techno_store_back.DAL.Entities.Laptop", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

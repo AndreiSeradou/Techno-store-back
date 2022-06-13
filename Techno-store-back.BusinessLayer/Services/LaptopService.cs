@@ -63,7 +63,14 @@ namespace Techno_store_back.BL.Services
         {
             var laptop = _mapper.Map<LaptopDAL>(model);
 
-            return await _laptopRepository.UpdateAsync(laptop);
+            var result = await _laptopRepository.UpdateAsync(laptop);
+
+            if (result != false)
+            {
+                await _laptopRepository.SaveAsync();
+            }
+
+            return result;
         }
     }
 }
