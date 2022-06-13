@@ -9,6 +9,8 @@ namespace Techno_store_back.DAL.Mapping
         public MappingDALConfiguration()
         {
             CreateMap<Laptop, LaptopDAL>().ReverseMap();
+            CreateMap<Order, OrderDAL>().ReverseMap();
+            CreateMap<Catalog, CatalogDAL>().ReverseMap();
         }
     }
 }
