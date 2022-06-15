@@ -1,4 +1,6 @@
-﻿namespace Techno_store_back.BL.Models.DTOs
+﻿using Techno_store_back.DAL.Entities;
+
+namespace Techno_store_back.BL.Models.DTOs
 {
     public class LaptopBL
     {
@@ -22,5 +24,6 @@
         public string Battery { get; set; }
         public string PowerSupplyUnit { get; set; }
         public string Weight { get; set; }
+        public int CatalogId { get; set; }
     }
 }

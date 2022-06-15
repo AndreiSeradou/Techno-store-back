@@ -7,39 +7,39 @@ using Techno_store_back.BL.Models.DTOs;
 using Techno_store_back.Configuration;
 using Techno_store_back.Web.Models.DTOs;
 
-namespace Techno_store_back.Controllers
+namespace Techno_store_back.Web.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class LaptopsController : ControllerBase
+    public class CatalogsController : ControllerBase
     {
-        private readonly ILaptopService _laptopService;
+        private readonly ICatalogService _catalogService;
         private readonly IMapper _mapper;
 
-        public LaptopsController(ILaptopService laptopService, IMapper mapper)
+        public CatalogsController(ICatalogService catalogService, IMapper mapper)
         {
-           _laptopService = laptopService;
+            _catalogService = catalogService;
             _mapper = mapper;
         }
 
         [HttpGet]
-        [Route("GetLaptops")]
+        [Route("GetCatalogs")]
         public async Task<IActionResult> GetAllAsync()
         {
-            var laptops = await _laptopService.GetAllAsync();
-            var result = _mapper.Map<IReadOnlyCollection<LaptopPL>>(laptops);
+            var catalogs = await _catalogService.GetAllAsync();
+            var result = _mapper.Map<IReadOnlyCollection<CatalogPL>>(catalogs);
 
             return Ok(result);
         }
 
         [HttpPost]
-        [Route("CreateLaptop")]
-        public async Task<IActionResult> CreateAsync([FromBody] LaptopPL model)
+        [Route("CreateCatalog")]
+        public async Task<IActionResult> CreateAsync([FromBody] CatalogPL model)
         {
             if (ModelState.IsValid)
             {
-                var laptop = _mapper.Map<LaptopBL>(model);
-                var result = await _laptopService.CreateAsync(laptop);
+                var catalog = _mapper.Map<CatalogBL>(model);
+                var result = await _catalogService.CreateAsync(catalog);
 
                 return Ok(result);
             }
@@ -48,13 +48,13 @@ namespace Techno_store_back.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateLaptop")]
-        public async Task<IActionResult> UpdateAsync([FromBody] LaptopPL model)
+        [Route("UpdateCatalog")]
+        public async Task<IActionResult> UpdateAsync([FromBody] CatalogPL model)
         {
             if (ModelState.IsValid)
             {
-                var laptop = _mapper.Map<LaptopBL>(model);
-                var result = await _laptopService.UpdateAsync(laptop);
+                var catalog = _mapper.Map<CatalogBL>(model);
+                var result = await _catalogService.UpdateAsync(catalog);
 
                 if (result == false)
                     return NotFound();
@@ -66,10 +66,10 @@ namespace Techno_store_back.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteLaptop")]
-        public async Task<IActionResult> DeleteAsync([FromBody] LaptopPL model)
+        [Route("DeleteCatalog")]
+        public async Task<IActionResult> DeleteAsync([FromBody] CatalogPL model)
         {
-            var result = await _laptopService.DeleteAsync(model.Id);
+            var result = await _catalogService.DeleteAsync(model.Id);
 
             if (result == false)
                 return NotFound();

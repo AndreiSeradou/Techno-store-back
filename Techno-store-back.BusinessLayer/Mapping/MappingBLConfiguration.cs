@@ -9,6 +9,8 @@ namespace Techno_store_back.BL.Mapping
         public MappingBLConfiguration()
         {
             CreateMap<LaptopBL, LaptopDAL>().ReverseMap();
+            CreateMap<OrderBL, OrderDAL>().ReverseMap();
+            CreateMap<CatalogBL, CatalogDAL>().ReverseMap();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Techno_store_back.DAL.Models.DTOs
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string ImageUrl { get; set; }
         public ICollection<Laptop> Laptops { get; set; }
     }
 }

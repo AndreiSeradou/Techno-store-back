@@ -9,6 +9,8 @@ namespace Techno_store_back.Web.Mapping
         public MappingPLConfiguration()
         {
             CreateMap<LaptopPL, LaptopBL>().ReverseMap();
+            CreateMap<OrderPL, OrderBL>().ReverseMap();
+            CreateMap<CatalogPL, CatalogBL>().ReverseMap();
         }
     }
 }

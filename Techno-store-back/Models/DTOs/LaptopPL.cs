@@ -1,4 +1,6 @@
-﻿namespace Techno_store_back.Web.Models.DTOs
+﻿using Techno_store_back.DAL.Entities;
+
+namespace Techno_store_back.Web.Models.DTOs
 {
     public class LaptopPL
     {
@@ -21,6 +23,7 @@
         public string Connections { get; set; }
         public string Battery { get; set; }
         public string PowerSupplyUnit { get; set; }
-        public string Weight { get; set; }      
+        public string Weight { get; set; }
+        public int CatalogId { get; set; }
     }
 }

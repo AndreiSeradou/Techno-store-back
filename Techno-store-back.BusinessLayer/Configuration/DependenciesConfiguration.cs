@@ -1,9 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Techno_store_back.BL.Interfaces.Services;
 using Techno_store_back.BL.Mapping;
 using Techno_store_back.BL.Services;
@@ -24,6 +19,8 @@ namespace Techno_store_back.BL.Configuration
         public static IServiceCollection RegisterServices(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<ILaptopService, LaptopService>();
+            serviceCollection.AddScoped<ICatalogService, CatalogService>();
+            serviceCollection.AddScoped<IOrderService, OrderService>();
 
             return serviceCollection;
         }

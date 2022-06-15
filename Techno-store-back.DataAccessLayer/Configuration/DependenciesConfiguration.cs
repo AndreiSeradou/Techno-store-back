@@ -29,6 +29,8 @@ namespace Techno_store_back.DAL.Configuration
         public static IServiceCollection RegisterRepositories(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddScoped<ILaptopRepository, LaptopRepository>();
+            serviceCollection.AddScoped<ICatalogRepository, CatalogRepository>();
+            serviceCollection.AddScoped<IOrderRepository, OrderRepository>();
 
             return serviceCollection;
         }
